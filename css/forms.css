@@ -1,0 +1,41 @@
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-1) var(--space-2); }
+.form-grid .full { grid-column: 1 / -1; }
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.form-group label { font-size: 0.82rem; font-weight: 600; color: var(--neutral-600); }
+.form-group label .req { color: var(--error-500); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 9px 12px; border: 1px solid var(--neutral-300); border-radius: var(--radius-md);
+  font-size: 0.92rem; font-family: inherit; background: var(--neutral-0); color: var(--neutral-800);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none; border-color: var(--primary-400); box-shadow: 0 0 0 3px var(--primary-100);
+}
+.form-group textarea { resize: vertical; min-height: 72px; }
+.form-group .hint { font-size: 0.76rem; color: var(--neutral-400); }
+.form-group .error-msg { font-size: 0.76rem; color: var(--error-700); }
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea { border-color: var(--error-500); }
+
+.form-row { display: flex; gap: var(--space-1); align-items: flex-end; }
+.form-computed {
+  background: var(--neutral-50); border: 1px dashed var(--neutral-300); border-radius: var(--radius-md);
+  padding: 10px 14px; font-size: 0.88rem; color: var(--neutral-600);
+}
+.form-computed strong { color: var(--primary-700); }
+
+.checkbox-group { display: flex; align-items: center; gap: 8px; }
+.checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary-600); }
+
+.radio-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.radio-pill {
+  padding: 6px 14px; border: 1px solid var(--neutral-300); border-radius: 999px; font-size: 0.82rem;
+  cursor: pointer; background: var(--neutral-0); color: var(--neutral-600); transition: all 0.15s;
+}
+.radio-pill input { display: none; }
+.radio-pill:has(input:checked) { background: var(--primary-600); color: #fff; border-color: var(--primary-600); }
